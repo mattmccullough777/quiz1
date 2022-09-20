@@ -3,6 +3,40 @@
 # and the value is a dictionary where the keys are 'email' and 'phone' and the values
 # are the corresponding email address and phone number of the customer. 
 
+import csv
+
+# open the vendorlist file
+infile = open("VendorList.csv","r")
+
+#txtfile = infile.read()
+
+# create a csv object from the file object
+csvfile = csv.reader(infile, delimiter=",")
+
+next(csvfile) #this skips the first line
+
+# create an empty dictionary
+vendor_list = {}
+
+for record in csvfile:
+    vendor_list[record[1],record[2]] = "email: "+record[4], "phone: "+record[5]
+
+
+# print the dictionary after the loop is finished
+print(vendor_list)
+
+# create an output file
+outfile = open(marketinglistFinal.csv,"w")
+
+# iternate through the dictionary and write to the output file
+for x in vendor_list:
+    outfile.write(vendor_list)
+
+# Note: you can use the comments below to guide you through the logic of the code. You are not
+# required to follow it. ALSO NOT ALL STEPS HAVE BEEN COMMENTED. You may have additional steps.
+
+
+
 # Once the dictionary has been completed print it out. It shoud resemble what is shown
 # below (first 2 and last 2 elements shown only):
 
@@ -17,25 +51,6 @@
 # Name your file - marketinglistFINAL.csv
 
 
-# Note: you can use the comments below to guide you through the logic of the code. You are not
-# required to follow it. ALSO NOT ALL STEPS HAVE BEEN COMMENTED. You may have additional steps.
-
-
-import csv
-
-# open the vendorlist file
-
-
-# create a csv object from the file object
-
-
-# create an output file
-
-
-
-
-
-# create an empty dictionary
 
 
 
@@ -48,13 +63,7 @@ import csv
 
 
 
-# print the dictionary after the loop is finished
-
-
-
-# iternate through the dictionary and write to the output file
-
-
-
 # close your output file
 
+infile.close()
+outfile.close()
