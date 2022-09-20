@@ -25,16 +25,19 @@ for record in csvfile:
 # print the dictionary after the loop is finished
 print(vendor_list)
 
+infile.close()
+
 # create an output file
-outfile = open(marketinglistFinal.csv,"w")
+outfile = open("marketinglistFinal.csv","w")
 
 # iternate through the dictionary and write to the output file
+
+
 for x in vendor_list:
     outfile.write(vendor_list)
 
 # Note: you can use the comments below to guide you through the logic of the code. You are not
 # required to follow it. ALSO NOT ALL STEPS HAVE BEEN COMMENTED. You may have additional steps.
-
 
 
 # Once the dictionary has been completed print it out. It shoud resemble what is shown
@@ -50,20 +53,6 @@ for x in vendor_list:
 # what is shown in the file - marketinglist.csv.
 # Name your file - marketinglistFINAL.csv
 
-
-
-
-
-# iterate through the csv object
-
-
-
-
-    # add the key-value pair to the dictionary
-
-
-
 # close your output file
 
-infile.close()
 outfile.close()
